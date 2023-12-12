@@ -21,6 +21,19 @@ class HomeController extends Controller
             'homes' => $homes, // Pass the 'students' variable to the view
         ]);
     }
+//    api  get data
+    public function test()
+    {
+        try {
+            $tasks = Task::latest()->get();
+            
+            return $tasks;
+        } catch (\Exception $e) {
+            // Log the exception or handle it in a way that makes sense for your application
+            return response()->json(['error' => 'Error fetching tasks'], 500);
+        }
+    }
+    
 
 
 
