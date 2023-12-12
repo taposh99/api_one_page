@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/home', [HomeController::class, 'test']);
+Route::post('store', [HomeController::class, 'apistore'])->name('store');
+
